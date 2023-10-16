@@ -17,10 +17,20 @@
 
 ![image](https://github.com/JoyfulTechLauncher/docs/assets/90823176/4980c7c2-cbfd-4083-b60d-3cb7912493d7)
 
-  If you successfully setup your environment, it will be displayed in Settings > Language & Frameworks > Flutter like this:
+4. Setup Android Studio
+   - Open Android Studio.
+   - Go to "Settings" > "Plugins".
+   - Make sure Dart and Flutter are installed and enabled.
+   
+     <img width="986" alt="plugins" src="https://github.com/JoyfulTechLauncher/docs/assets/90823176/0c3efb8e-9b86-46f7-998d-de81c48e397c">
 
-![image](https://github.com/JoyfulTechLauncher/docs/assets/90823176/fa0ef07c-15f3-41fe-94c1-7c0e7e9b9553)
+   - Go to "Settings" > "Language & Frameworks" > "Flutter".
+   - Make sure the Flutter SDK path is correct.
+   
+     <img width="990" alt="Flutter_SDK" src="https://github.com/JoyfulTechLauncher/docs/assets/90823176/59dd8d17-5475-4ea8-8710-dd7c6c1d9a22">
 
+
+   
 4. Run our app
     - Open Android Studio.
     - Go to "File" > "Open" and navigate to our project's directory. Select the project folder and click "Open."
@@ -33,6 +43,6 @@
       
    You should see the app's interface on the emulator once the build process is complete.
 
-<img width="325" alt="Joyful" src="https://github.com/JoyfulTechLauncher/docs/assets/90823176/985bbf79-24f8-422a-b60d-1570b4466a35">
+   <img width="325" alt="Joyful" src="https://github.com/JoyfulTechLauncher/docs/assets/90823176/985bbf79-24f8-422a-b60d-1570b4466a35">
 
 
