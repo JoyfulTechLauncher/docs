@@ -12,12 +12,15 @@
 3. **macOS setup:** You can follow [this instruction](https://docs.flutter.dev/get-started/install/macos).
    
    **Windows setup:** You can follow [this instruction](https://docs.flutter.dev/get-started/install/windows).
+   
+   > **Note**: The "flutter doctor" command may encounter issues, and it's not necessary for every item to have a green checkmark. In the following image, the "flutter doctor" doesn't show all green checkmarks, but code can still run successfully. So, if you can't pass all the checks, you can still try running the project:
+   > 
+   > ![flutter_doctor](https://github.com/JoyfulTechLauncher/docs/assets/90823176/101a261c-c669-40e5-88b9-161d43339ae0)
 
-> **Note**: The "flutter doctor" command may encounter issues, and it's not necessary for every item to have a green checkmark. In the following image, the "flutter doctor" doesn't show all green checkmarks, but code can still run successfully. So, if you can't pass all the checks, you can still try running the project:
+   
 
-![image](https://github.com/JoyfulTechLauncher/docs/assets/90823176/4980c7c2-cbfd-4083-b60d-3cb7912493d7)
 
-4. Setup Android Studio
+5. Setup Android Studio
    - Open Android Studio.
    - Go to "Settings" > "Plugins".
    - Make sure Dart and Flutter are installed and enabled.
