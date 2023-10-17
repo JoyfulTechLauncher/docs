@@ -1,4 +1,4 @@
-# Wordpress RESTful API
+# Wordpress RESTful API Testing
 
 This API is used to get and update user data and product data.
 
