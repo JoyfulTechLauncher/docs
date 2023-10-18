@@ -72,7 +72,7 @@ The following image illustrates how this works:
 
 You must use the `/wc-auth/v1/authorize` endpoint and pass the above parameters as a query string.
 
-Example of how to build an authentication URL:
+### Example of how to build an authentication URL:
 
 ```
 # Bash example
@@ -85,7 +85,7 @@ QUERY_STRING=$(echo $QUERY_STRING | sed -e "s/%20/\+/g" -e "s/%3D/\=/g" -e "s/%2
 echo "$STORE_URL$ENDPOINT?$QUERY_STRING"
 ```
 
-Example of JSON posted with the API Keys
+### Example of JSON posted with the API Keys
 
 ```
 {
@@ -105,6 +105,699 @@ By default, the API provides information about all available endpoints on the si
 ### HTTP request
 
 `GET` `/wp-json/wc/v3`
+
+### Input Example
+
+```
+GET https://app.com/wp-json/wc/v3
+```
+
+### Output Example
+
+```
+{
+  "namespace": "wc/v3",
+  "routes": {
+    "/wc/v3": {
+      "namespace": "wc/v3",
+      "methods": [
+        "GET"
+      ],
+      "endpoints": [
+        {
+          "methods": [
+            "GET"
+          ],
+          "args": {
+            "namespace": {
+              "required": false,
+              "default": "wc/v3"
+            },
+            "context": {
+              "required": false,
+              "default": "view"
+            }
+          }
+        }
+      ],
+      "_links": {
+        "self": "https://example.com/wp-json/wc/v3"
+      }
+    },
+    "/wc/v3/coupons": {
+      "namespace": "wc/v3",
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "endpoints": [
+        {
+          "methods": [
+            "GET"
+          ],
+          "args": {
+            "context": {
+              "required": false,
+              "default": "view",
+              "enum": [
+                "view",
+                "edit"
+              ],
+              "description": "Scope under which the request is made; determines fields present in response.",
+              "type": "string"
+            },
+            "page": {
+              "required": false,
+              "default": 1,
+              "description": "Current page of the collection.",
+              "type": "integer"
+            },
+            "per_page": {
+              "required": false,
+              "default": 10,
+              "description": "Maximum number of items to be returned in result set.",
+              "type": "integer"
+            },
+            "search": {
+              "required": false,
+              "description": "Limit results to those matching a string.",
+              "type": "string"
+            },
+            "after": {
+              "required": false,
+              "description": "Limit response to resources published after a given ISO8601 compliant date.",
+              "type": "string"
+            },
+            "before": {
+              "required": false,
+              "description": "Limit response to resources published before a given ISO8601 compliant date.",
+              "type": "string"
+            },
+            "exclude": {
+              "required": false,
+              "default": [],
+              "description": "Ensure result set excludes specific IDs.",
+              "type": "array",
+              "items": {
+                "type": "integer"
+              }
+            },
+            "include": {
+              "required": false,
+              "default": [],
+              "description": "Limit result set to specific ids.",
+              "type": "array",
+              "items": {
+                "type": "integer"
+              }
+            },
+            "offset": {
+              "required": false,
+              "description": "Offset the result set by a specific number of items.",
+              "type": "integer"
+            },
+            "order": {
+              "required": false,
+              "default": "desc",
+              "enum": [
+                "asc",
+                "desc"
+              ],
+              "description": "Order sort attribute ascending or descending.",
+              "type": "string"
+            },
+            "orderby": {
+              "required": false,
+              "default": "date",
+              "enum": [
+                "date",
+                "id",
+                "include",
+                "title",
+                "slug"
+              ],
+              "description": "Sort collection by object attribute.",
+              "type": "string"
+            },
+            "code": {
+              "required": false,
+              "description": "Limit result set to resources with a specific code.",
+              "type": "string"
+            }
+          }
+        },
+        {
+          "methods": [
+            "POST"
+          ],
+          "args": {
+            "code": {
+              "required": true,
+              "description": "Coupon code.",
+              "type": "string"
+            },
+            "amount": {
+              "required": false,
+              "description": "The amount of discount. Should always be numeric, even if setting a percentage.",
+              "type": "string"
+            },
+            "discount_type": {
+              "required": false,
+              "default": "fixed_cart",
+              "enum": [
+                "percent",
+                "fixed_cart",
+                "fixed_product"
+              ],
+              "description": "Determines the type of discount that will be applied.",
+              "type": "string"
+            },
+            "description": {
+              "required": false,
+              "description": "Coupon description.",
+              "type": "string"
+            },
+            "date_expires": {
+              "required": false,
+              "description": "The date the coupon expires, in the site's timezone.",
+              "type": "string"
+            },
+            "date_expires_gmt": {
+              "required": false,
+              "description": "The date the coupon expires, as GMT.",
+              "type": "string"
+            },
+            "individual_use": {
+              "required": false,
+              "default": false,
+              "description": "If true, the coupon can only be used individually. Other applied coupons will be removed from the cart.",
+              "type": "boolean"
+            },
+            "product_ids": {
+              "required": false,
+              "description": "List of product IDs the coupon can be used on.",
+              "type": "array",
+              "items": {
+                "type": "integer"
+              }
+            },
+            "excluded_product_ids": {
+              "required": false,
+              "description": "List of product IDs the coupon cannot be used on.",
+              "type": "array",
+              "items": {
+                "type": "integer"
+              }
+            },
+            "usage_limit": {
+              "required": false,
+              "description": "How many times the coupon can be used in total.",
+              "type": "integer"
+            },
+            "usage_limit_per_user": {
+              "required": false,
+              "description": "How many times the coupon can be used per customer.",
+              "type": "integer"
+            },
+            "limit_usage_to_x_items": {
+              "required": false,
+              "description": "Max number of items in the cart the coupon can be applied to.",
+              "type": "integer"
+            },
+            "free_shipping": {
+              "required": false,
+              "default": false,
+              "description": "If true and if the free shipping method requires a coupon, this coupon will enable free shipping.",
+              "type": "boolean"
+            },
+            "product_categories": {
+              "required": false,
+              "description": "List of category IDs the coupon applies to.",
+              "type": "array",
+              "items": {
+                "type": "integer"
+              }
+            },
+            "excluded_product_categories": {
+              "required": false,
+              "description": "List of category IDs the coupon does not apply to.",
+              "type": "array",
+              "items": {
+                "type": "integer"
+              }
+            },
+            "exclude_sale_items": {
+              "required": false,
+              "default": false,
+              "description": "If true, this coupon will not be applied to items that have sale prices.",
+              "type": "boolean"
+            },
+            "minimum_amount": {
+              "required": false,
+              "description": "Minimum order amount that needs to be in the cart before coupon applies.",
+              "type": "string"
+            },
+            "maximum_amount": {
+              "required": false,
+              "description": "Maximum order amount allowed when using the coupon.",
+              "type": "string"
+            },
+            "email_restrictions": {
+              "required": false,
+              "description": "List of email addresses that can use this coupon.",
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "meta_data": {
+              "required": false,
+              "description": "Meta data.",
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "description": "Meta ID.",
+                    "type": "integer",
+                    "context": [
+                      "view",
+                      "edit"
+                    ],
+                    "readonly": true
+                  },
+                  "key": {
+                    "description": "Meta key.",
+                    "type": "string",
+                    "context": [
+                      "view",
+                      "edit"
+                    ]
+                  },
+                  "value": {
+                    "description": "Meta value.",
+                    "type": "string",
+                    "context": [
+                      "view",
+                      "edit"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "_links": {
+        "self": "https://example.com/wp-json/wc/v3/coupons"
+      }
+    },
+    "/wc/v3/coupons/(?P<id>[\\d]+)": {
+      "namespace": "wc/v3",
+      "methods": [
+        "GET",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE"
+      ],
+      "endpoints": [
+        {
+          "methods": [
+            "GET"
+          ],
+          "args": {
+            "id": {
+              "required": false,
+              "description": "Unique identifier for the resource.",
+              "type": "integer"
+            },
+            "context": {
+              "required": false,
+              "default": "view",
+              "enum": [
+                "view",
+                "edit"
+              ],
+              "description": "Scope under which the request is made; determines fields present in response.",
+              "type": "string"
+            }
+          }
+        },
+        {
+          "methods": [
+            "POST",
+            "PUT",
+            "PATCH"
+          ],
+          "args": {
+            "id": {
+              "required": false,
+              "description": "Unique identifier for the resource.",
+              "type": "integer"
+            },
+            "code": {
+              "required": false,
+              "description": "Coupon code.",
+              "type": "string"
+            },
+            "amount": {
+              "required": false,
+              "description": "The amount of discount. Should always be numeric, even if setting a percentage.",
+              "type": "string"
+            },
+            "discount_type": {
+              "required": false,
+              "enum": [
+                "percent",
+                "fixed_cart",
+                "fixed_product"
+              ],
+              "description": "Determines the type of discount that will be applied.",
+              "type": "string"
+            },
+            "description": {
+              "required": false,
+              "description": "Coupon description.",
+              "type": "string"
+            },
+            "date_expires": {
+              "required": false,
+              "description": "The date the coupon expires, in the site's timezone.",
+              "type": "string"
+            },
+            "date_expires_gmt": {
+              "required": false,
+              "description": "The date the coupon expires, as GMT.",
+              "type": "string"
+            },
+            "individual_use": {
+              "required": false,
+              "description": "If true, the coupon can only be used individually. Other applied coupons will be removed from the cart.",
+              "type": "boolean"
+            },
+            "product_ids": {
+              "required": false,
+              "description": "List of product IDs the coupon can be used on.",
+              "type": "array",
+              "items": {
+                "type": "integer"
+              }
+            },
+            "excluded_product_ids": {
+              "required": false,
+              "description": "List of product IDs the coupon cannot be used on.",
+              "type": "array",
+              "items": {
+                "type": "integer"
+              }
+            },
+            "usage_limit": {
+              "required": false,
+              "description": "How many times the coupon can be used in total.",
+              "type": "integer"
+            },
+            "usage_limit_per_user": {
+              "required": false,
+              "description": "How many times the coupon can be used per customer.",
+              "type": "integer"
+            },
+            "limit_usage_to_x_items": {
+              "required": false,
+              "description": "Max number of items in the cart the coupon can be applied to.",
+              "type": "integer"
+            },
+            "free_shipping": {
+              "required": false,
+              "description": "If true and if the free shipping method requires a coupon, this coupon will enable free shipping.",
+              "type": "boolean"
+            },
+            "product_categories": {
+              "required": false,
+              "description": "List of category IDs the coupon applies to.",
+              "type": "array",
+              "items": {
+                "type": "integer"
+              }
+            },
+            "excluded_product_categories": {
+              "required": false,
+              "description": "List of category IDs the coupon does not apply to.",
+              "type": "array",
+              "items": {
+                "type": "integer"
+              }
+            },
+            "exclude_sale_items": {
+              "required": false,
+              "description": "If true, this coupon will not be applied to items that have sale prices.",
+              "type": "boolean"
+            },
+            "minimum_amount": {
+              "required": false,
+              "description": "Minimum order amount that needs to be in the cart before coupon applies.",
+              "type": "string"
+            },
+            "maximum_amount": {
+              "required": false,
+              "description": "Maximum order amount allowed when using the coupon.",
+              "type": "string"
+            },
+            "email_restrictions": {
+              "required": false,
+              "description": "List of email addresses that can use this coupon.",
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "meta_data": {
+              "required": false,
+              "description": "Meta data.",
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "description": "Meta ID.",
+                    "type": "integer",
+                    "context": [
+                      "view",
+                      "edit"
+                    ],
+                    "readonly": true
+                  },
+                  "key": {
+                    "description": "Meta key.",
+                    "type": "string",
+                    "context": [
+                      "view",
+                      "edit"
+                    ]
+                  },
+                  "value": {
+                    "description": "Meta value.",
+                    "type": "string",
+                    "context": [
+                      "view",
+                      "edit"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "methods": [
+            "DELETE"
+          ],
+          "args": {
+            "id": {
+              "required": false,
+              "description": "Unique identifier for the resource.",
+              "type": "integer"
+            },
+            "force": {
+              "required": false,
+              "default": false,
+              "description": "Whether to bypass trash and force deletion.",
+              "type": "boolean"
+            }
+          }
+        }
+      ]
+    },
+    "/wc/v3/coupons/batch": {
+      "namespace": "wc/v3",
+      "methods": [
+        "POST",
+        "PUT",
+        "PATCH"
+      ],
+      "endpoints": [
+        {
+          "methods": [
+            "POST",
+            "PUT",
+            "PATCH"
+          ],
+          "args": {
+            "code": {
+              "required": false,
+              "description": "Coupon code.",
+              "type": "string"
+            },
+            "amount": {
+              "required": false,
+              "description": "The amount of discount. Should always be numeric, even if setting a percentage.",
+              "type": "string"
+            },
+            "discount_type": {
+              "required": false,
+              "enum": [
+                "percent",
+                "fixed_cart",
+                "fixed_product"
+              ],
+              "description": "Determines the type of discount that will be applied.",
+              "type": "string"
+            },
+            "description": {
+              "required": false,
+              "description": "Coupon description.",
+              "type": "string"
+            },
+            "date_expires": {
+              "required": false,
+              "description": "The date the coupon expires, in the site's timezone.",
+              "type": "string"
+            },
+            "date_expires_gmt": {
+              "required": false,
+              "description": "The date the coupon expires, as GMT.",
+              "type": "string"
+            },
+            "individual_use": {
+              "required": false,
+              "description": "If true, the coupon can only be used individually. Other applied coupons will be removed from the cart.",
+              "type": "boolean"
+            },
+            "product_ids": {
+              "required": false,
+              "description": "List of product IDs the coupon can be used on.",
+              "type": "array",
+              "items": {
+                "type": "integer"
+              }
+            },
+            "excluded_product_ids": {
+              "required": false,
+              "description": "List of product IDs the coupon cannot be used on.",
+              "type": "array",
+              "items": {
+                "type": "integer"
+              }
+            },
+            "usage_limit": {
+              "required": false,
+              "description": "How many times the coupon can be used in total.",
+              "type": "integer"
+            },
+            "usage_limit_per_user": {
+              "required": false,
+              "description": "How many times the coupon can be used per customer.",
+              "type": "integer"
+            },
+            "limit_usage_to_x_items": {
+              "required": false,
+              "description": "Max number of items in the cart the coupon can be applied to.",
+              "type": "integer"
+            },
+            "free_shipping": {
+              "required": false,
+              "description": "If true and if the free shipping method requires a coupon, this coupon will enable free shipping.",
+              "type": "boolean"
+            },
+            "product_categories": {
+              "required": false,
+              "description": "List of category IDs the coupon applies to.",
+              "type": "array",
+              "items": {
+                "type": "integer"
+              }
+            },
+            "excluded_product_categories": {
+              "required": false,
+              "description": "List of category IDs the coupon does not apply to.",
+              "type": "array",
+              "items": {
+                "type": "integer"
+              }
+            },
+            "exclude_sale_items": {
+              "required": false,
+              "description": "If true, this coupon will not be applied to items that have sale prices.",
+              "type": "boolean"
+            },
+            "minimum_amount": {
+              "required": false,
+              "description": "Minimum order amount that needs to be in the cart before coupon applies.",
+              "type": "string"
+            },
+            "maximum_amount": {
+              "required": false,
+              "description": "Maximum order amount allowed when using the coupon.",
+              "type": "string"
+            },
+            "email_restrictions": {
+              "required": false,
+              "description": "List of email addresses that can use this coupon.",
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "meta_data": {
+              "required": false,
+              "description": "Meta data.",
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "description": "Meta ID.",
+                    "type": "integer",
+                    "context": [
+                      "view",
+                      "edit"
+                    ],
+                    "readonly": true
+                  },
+                  "key": {
+                    "description": "Meta key.",
+                    "type": "string",
+                    "context": [
+                      "view",
+                      "edit"
+                    ]
+                  },
+                  "value": {
+                    "description": "Meta value.",
+                    "type": "string",
+                    "context": [
+                      "view",
+                      "edit"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+
+```
+
 
 ## 4. Customers
 
@@ -137,11 +830,24 @@ The customer API allows you to create, view, update, and delete individual, or a
 
 `POST` `/wp-json/wc/v3/customers`
 
+### Input Example
+
+```
+POST https://app.com/wp-json/wc/v3/customers
+```
+
 ### Retrieve a customer
 
 `GET` `/wp-json/wc/v3/customers/<id>`
 
-- JSON response example:
+### Input Example
+
+```
+GET https://app.com/wp-json/wc/v3/customers/25
+```
+
+### Output Example
+JSON response example:
 ```
 {
   "id": 25,
@@ -201,6 +907,17 @@ The customer API allows you to create, view, update, and delete individual, or a
 
 - Details for attributes : https://woocommerce.github.io/woocommerce-rest-api-docs/?shell#list-all-customers
 
+### Input Example
+
+```
+GET https://app.com/wp-json/wc/v3/customers
+```
+
+### Output Example
+
+```
+
+```
 ### Update a customer
 
 `PUT` `/wp-json/wc/v3/customers/<id>`
