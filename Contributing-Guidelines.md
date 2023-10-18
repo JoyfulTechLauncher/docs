@@ -4,11 +4,11 @@
 
 You can contribute to the doc repo or code repo in various ways. You could do so by reporting a bug, requesting a new feature, improving the docs, or writing code to solve current issues. Whenever you feel like to start, you will need to create an issue first.
 
-## **For external contributors** - What you should always include while creating a new issue
+## **For external contributors**
 - Label(s)
 - Detailed issue description
 
-## **For Joyful team members** - What you should always include while creating a new issue
+## **For Joyful team members**
 - Label(s)
 - Detailed issue description
 - The assignee
