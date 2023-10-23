@@ -47,7 +47,7 @@ Ultimately your commits from `your-feature-branch` will need to get merged into 
    After you've pushed your code and commits to your repository, you can invite other developers to review it. Reviewers will look at your code for correctness, style, and potential issues.
 
 2. **Opening a Pull Request (PR):**
-   To compare your feature branch ("my-feature") against the main branch ("master"), you open a Pull Request. The PR allows for a side-by-side comparison of the changes between the two branches.
+   To compare your feature branch (`your-feature-branch`) against the main branch (`dev`), you open a Pull Request. The PR allows for a side-by-side comparison of the changes between the two branches.
 
 3. **Setting Base and Compare Branch:**
    In the PR, you should specify `dev` as the base branch (the destination), and `your-feature-branch` as the compare branch (the source). This indicates that you want to merge the changes from `your-feature-branch` into `dev`.
