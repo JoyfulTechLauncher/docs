@@ -253,7 +253,479 @@ Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL
     }
 }
 ```
+## 4. Product Listing
 
+This is used to get all the product data.
 
+### Endpoint
 
+`/wp-json/wc/v3/products`
 
+### Request Type
+
+`GET`
+
+### Response
+
+`JASON`
+
+### Header
+
+- **JWT-Auth token**
+
+### Example Request
+```
+GET https://teamjoyful.buzz/wp-json/wc/v3/products
+Header:
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL3d3dy50ZWFtam95ZnVsLmJ1enoiLCJpYXQiOjE2OTgwNTMxNTMsIm5iZiI6MTY5ODA1MzE1MywiZXhwIjoxNjk4NjU3OTUzLCJkYXRhIjp7InVzZXIiOnsiaWQiOiI0In19fQ.8-1i78ZEf77HJeoyJvrnjOWSTDLrjN-zOfxQGmPIaMk
+```
+
+### Example Responses
+```
+[
+    {
+        "id": 62,
+        "name": "New Balance Q Speed 5 Inch 2 in 1 Short Men's Shorts Sport",
+        "slug": "new-balance-q-speed-5-inch-2-in-1-short-mens-shorts-sport",
+        "permalink": "https://www.teamjoyful.buzz/product/new-balance-q-speed-5-inch-2-in-1-short-mens-shorts-sport/",
+        "date_created": "2023-08-28T20:03:55",
+        "date_created_gmt": "2023-08-28T20:03:55",
+        "date_modified": "2023-08-28T20:03:55",
+        "date_modified_gmt": "2023-08-28T20:03:55",
+        "type": "simple",
+        "status": "publish",
+        "featured": false,
+        "catalog_visibility": "visible",
+        "description": "<p>The lightweight New Balance Q Speed 5 Inch 2 in 1 Short is ideal for everything from track workouts to marathons. The men’s running shorts combine a supportive built-in liner short and a breezy woven shell to create a stylish and functional garment. Drop in and zippered pockets provide easily accessible storage for tech, snacks and other small items.</p>\n",
+        "short_description": "",
+        "sku": "",
+        "price": "58",
+        "regular_price": "80",
+        "sale_price": "58",
+        "date_on_sale_from": null,
+        "date_on_sale_from_gmt": null,
+        "date_on_sale_to": null,
+        "date_on_sale_to_gmt": null,
+        "on_sale": true,
+        "purchasable": true,
+        "total_sales": 1,
+        "virtual": false,
+        "downloadable": false,
+        "downloads": [],
+        "download_limit": -1,
+        "download_expiry": -1,
+        "external_url": "",
+        "button_text": "",
+        "tax_status": "taxable",
+        "tax_class": "",
+        "manage_stock": false,
+        "stock_quantity": null,
+        "backorders": "no",
+        "backorders_allowed": false,
+        "backordered": false,
+        "low_stock_amount": null,
+        "sold_individually": false,
+        "weight": "",
+        "dimensions": {
+            "length": "",
+            "width": "",
+            "height": ""
+        },
+        "shipping_required": true,
+        "shipping_taxable": true,
+        "shipping_class": "",
+        "shipping_class_id": 0,
+        "reviews_allowed": true,
+        "average_rating": "0.00",
+        "rating_count": 0,
+        "upsell_ids": [],
+        "cross_sell_ids": [],
+        "parent_id": 0,
+        "purchase_note": "",
+        "categories": [
+            {
+                "id": 18,
+                "name": "Man",
+                "slug": "man"
+            }
+        ],
+        "tags": [],
+        "images": [
+            {
+                "id": 63,
+                "date_created": "2023-08-28T20:03:51",
+                "date_created_gmt": "2023-08-28T20:03:51",
+                "date_modified": "2023-08-28T20:03:51",
+                "date_modified_gmt": "2023-08-28T20:03:51",
+                "src": "https://www.teamjoyful.buzz/wp-content/uploads/2023/08/s-l500.jpg",
+                "name": "s-l500",
+                "alt": ""
+            }
+        ],
+        "attributes": [
+            {
+                "id": 3,
+                "name": "Brand",
+                "position": 0,
+                "visible": true,
+                "variation": false,
+                "options": [
+                    "New Balance"
+                ]
+            },
+            {
+                "id": 1,
+                "name": "Color",
+                "position": 1,
+                "visible": true,
+                "variation": false,
+                "options": [
+                    "Black"
+                ]
+            },
+            {
+                "id": 5,
+                "name": "Condition",
+                "position": 2,
+                "visible": true,
+                "variation": false,
+                "options": [
+                    "New"
+                ]
+            },
+            {
+                "id": 4,
+                "name": "Gender",
+                "position": 3,
+                "visible": true,
+                "variation": false,
+                "options": [
+                    "Male"
+                ]
+            },
+            {
+                "id": 2,
+                "name": "Size",
+                "position": 4,
+                "visible": true,
+                "variation": false,
+                "options": [
+                    "xs"
+                ]
+            }
+        ],
+        "default_attributes": [],
+        "variations": [],
+        "grouped_products": [],
+        "menu_order": 0,
+        "price_html": "<del aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><bdi><span class=\"woocommerce-Price-currencySymbol\">&#36;</span>80.00</bdi></span></del> <ins><span class=\"woocommerce-Price-amount amount\"><bdi><span class=\"woocommerce-Price-currencySymbol\">&#36;</span>58.00</bdi></span></ins>",
+        "related_ids": [
+            48,
+            56,
+            28,
+            52,
+            44
+        ],
+        "meta_data": [],
+        "stock_status": "instock",
+        "has_options": false,
+        "_links": {
+            "self": [
+                {
+                    "href": "https://www.teamjoyful.buzz/wp-json/wc/v3/products/62"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "https://www.teamjoyful.buzz/wp-json/wc/v3/products"
+                }
+            ]
+        }
+    }
+  ] 
+```
+## 5. Get Categories
+
+This is used to get all the category data.
+
+### Endpoint
+
+`/wp-json/wc/v3/products/categories`
+
+### Request Type
+
+`GET`
+
+### Response
+
+`JASON`
+
+### Header
+
+- **JWT-Auth token**
+
+### Example Request
+```
+GET https://teamjoyful.buzz/wp-json/wc/v3/products/categories
+Header:
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL3d3dy50ZWFtam95ZnVsLmJ1enoiLCJpYXQiOjE2OTgwNTMxNTMsIm5iZiI6MTY5ODA1MzE1MywiZXhwIjoxNjk4NjU3OTUzLCJkYXRhIjp7InVzZXIiOnsiaWQiOiI0In19fQ.8-1i78ZEf77HJeoyJvrnjOWSTDLrjN-zOfxQGmPIaMk
+```
+
+### Example Responses
+```
+[
+    {
+        "id": 22,
+        "name": "Accessories",
+        "slug": "accessories",
+        "parent": 0,
+        "description": "",
+        "display": "default",
+        "image": {
+            "id": 258,
+            "date_created": "2023-10-01T08:07:15",
+            "date_created_gmt": "2023-10-01T08:07:15",
+            "date_modified": "2023-10-01T08:07:15",
+            "date_modified_gmt": "2023-10-01T08:07:15",
+            "src": "https://www.teamjoyful.buzz/wp-content/uploads/2023/10/product-accessory1-600x600-1.jpg",
+            "name": "product-accessory1-600&#215;600",
+            "alt": ""
+        },
+        "menu_order": 1,
+        "count": 3,
+        "_links": {
+            "self": [
+                {
+                    "href": "https://www.teamjoyful.buzz/wp-json/wc/v3/products/categories/22"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "https://www.teamjoyful.buzz/wp-json/wc/v3/products/categories"
+                }
+            ]
+        }
+    },
+    {
+        "id": 19,
+        "name": "Children",
+        "slug": "children",
+        "parent": 0,
+        "description": "",
+        "display": "default",
+        "image": {
+            "id": 263,
+            "date_created": "2023-10-01T10:09:37",
+            "date_created_gmt": "2023-10-01T10:09:37",
+            "date_modified": "2023-10-01T10:09:37",
+            "date_modified_gmt": "2023-10-01T10:09:37",
+            "src": "https://www.teamjoyful.buzz/wp-content/uploads/2023/10/截屏2023-10-01-下午9.08.35.png",
+            "name": "截屏2023-10-01 下午9.08.35",
+            "alt": ""
+        },
+        "menu_order": 2,
+        "count": 1,
+        "_links": {
+            "self": [
+                {
+                    "href": "https://www.teamjoyful.buzz/wp-json/wc/v3/products/categories/19"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "https://www.teamjoyful.buzz/wp-json/wc/v3/products/categories"
+                }
+            ]
+        }
+    }
+]
+```
+## 6. Get Specific Product Using Product ID
+
+This is used to get one specific product data.
+
+### Endpoint
+
+`/wp-json/wc/v3/products/$id`
+
+### Request Type
+
+`GET`
+
+### Response
+
+`JASON`
+
+### Header
+
+- **JWT-Auth token**
+
+### Example Request
+```
+GET https://teamjoyful.buzz/wp-json/wc/v3/products/62
+Header:
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL3d3dy50ZWFtam95ZnVsLmJ1enoiLCJpYXQiOjE2OTgwNTMxNTMsIm5iZiI6MTY5ODA1MzE1MywiZXhwIjoxNjk4NjU3OTUzLCJkYXRhIjp7InVzZXIiOnsiaWQiOiI0In19fQ.8-1i78ZEf77HJeoyJvrnjOWSTDLrjN-zOfxQGmPIaMk
+```
+
+### Example Responses
+```
+{
+    "id": 62,
+    "name": "New Balance Q Speed 5 Inch 2 in 1 Short Men's Shorts Sport",
+    "slug": "new-balance-q-speed-5-inch-2-in-1-short-mens-shorts-sport",
+    "permalink": "https://www.teamjoyful.buzz/product/new-balance-q-speed-5-inch-2-in-1-short-mens-shorts-sport/",
+    "date_created": "2023-08-28T20:03:55",
+    "date_created_gmt": "2023-08-28T20:03:55",
+    "date_modified": "2023-08-28T20:03:55",
+    "date_modified_gmt": "2023-08-28T20:03:55",
+    "type": "simple",
+    "status": "publish",
+    "featured": false,
+    "catalog_visibility": "visible",
+    "description": "<p>The lightweight New Balance Q Speed 5 Inch 2 in 1 Short is ideal for everything from track workouts to marathons. The men’s running shorts combine a supportive built-in liner short and a breezy woven shell to create a stylish and functional garment. Drop in and zippered pockets provide easily accessible storage for tech, snacks and other small items.</p>\n",
+    "short_description": "",
+    "sku": "",
+    "price": "58",
+    "regular_price": "80",
+    "sale_price": "58",
+    "date_on_sale_from": null,
+    "date_on_sale_from_gmt": null,
+    "date_on_sale_to": null,
+    "date_on_sale_to_gmt": null,
+    "on_sale": true,
+    "purchasable": true,
+    "total_sales": 1,
+    "virtual": false,
+    "downloadable": false,
+    "downloads": [],
+    "download_limit": -1,
+    "download_expiry": -1,
+    "external_url": "",
+    "button_text": "",
+    "tax_status": "taxable",
+    "tax_class": "",
+    "manage_stock": false,
+    "stock_quantity": null,
+    "backorders": "no",
+    "backorders_allowed": false,
+    "backordered": false,
+    "low_stock_amount": null,
+    "sold_individually": false,
+    "weight": "",
+    "dimensions": {
+        "length": "",
+        "width": "",
+        "height": ""
+    },
+    "shipping_required": true,
+    "shipping_taxable": true,
+    "shipping_class": "",
+    "shipping_class_id": 0,
+    "reviews_allowed": true,
+    "average_rating": "0.00",
+    "rating_count": 0,
+    "upsell_ids": [],
+    "cross_sell_ids": [],
+    "parent_id": 0,
+    "purchase_note": "",
+    "categories": [
+        {
+            "id": 18,
+            "name": "Man",
+            "slug": "man"
+        }
+    ],
+    "tags": [],
+    "images": [
+        {
+            "id": 63,
+            "date_created": "2023-08-28T20:03:51",
+            "date_created_gmt": "2023-08-28T20:03:51",
+            "date_modified": "2023-08-28T20:03:51",
+            "date_modified_gmt": "2023-08-28T20:03:51",
+            "src": "https://www.teamjoyful.buzz/wp-content/uploads/2023/08/s-l500.jpg",
+            "name": "s-l500",
+            "alt": ""
+        }
+    ],
+    "attributes": [
+        {
+            "id": 3,
+            "name": "Brand",
+            "position": 0,
+            "visible": true,
+            "variation": false,
+            "options": [
+                "New Balance"
+            ]
+        },
+        {
+            "id": 1,
+            "name": "Color",
+            "position": 1,
+            "visible": true,
+            "variation": false,
+            "options": [
+                "Black"
+            ]
+        },
+        {
+            "id": 5,
+            "name": "Condition",
+            "position": 2,
+            "visible": true,
+            "variation": false,
+            "options": [
+                "New"
+            ]
+        },
+        {
+            "id": 4,
+            "name": "Gender",
+            "position": 3,
+            "visible": true,
+            "variation": false,
+            "options": [
+                "Male"
+            ]
+        },
+        {
+            "id": 2,
+            "name": "Size",
+            "position": 4,
+            "visible": true,
+            "variation": false,
+            "options": [
+                "xs"
+            ]
+        }
+    ],
+    "default_attributes": [],
+    "variations": [],
+    "grouped_products": [],
+    "menu_order": 0,
+    "price_html": "<del aria-hidden=\"true\"><span class=\"woocommerce-Price-amount amount\"><bdi><span class=\"woocommerce-Price-currencySymbol\">&#36;</span>80.00</bdi></span></del> <ins><span class=\"woocommerce-Price-amount amount\"><bdi><span class=\"woocommerce-Price-currencySymbol\">&#36;</span>58.00</bdi></span></ins>",
+    "related_ids": [
+        56,
+        46,
+        54,
+        28,
+        44
+    ],
+    "meta_data": [],
+    "stock_status": "instock",
+    "has_options": false,
+    "_links": {
+        "self": [
+            {
+                "href": "https://www.teamjoyful.buzz/wp-json/wc/v3/products/62"
+            }
+        ],
+        "collection": [
+            {
+                "href": "https://www.teamjoyful.buzz/wp-json/wc/v3/products"
+            }
+        ]
+    }
+}
+```
