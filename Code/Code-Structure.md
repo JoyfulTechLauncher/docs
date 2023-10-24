@@ -1,4 +1,5 @@
 ## Code Structure for the project:
+```
 │  .flutter-plugins
 │  .flutter-plugins-dependencies
 │  .gitattributes
@@ -6344,4 +6345,5 @@
         │  
         └─resources
                 app_icon.ico
+```
                 
