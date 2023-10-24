@@ -301,4 +301,4 @@ func <|< <A>(lhs: A, rhs: A) -> A
 ```
 
 _Rationale:_ Operators consist of punctuation characters, which can make them difficult to read when immediately followed by the punctuation for a type or value parameter list. Adding whitespace separates the two more clearly.
-* [فارسی](https://github.com/mohpor/swift-style-guide/blob/Persian/README-FA.md)
+
